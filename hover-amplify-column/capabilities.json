@@ -1,0 +1,161 @@
+{
+  "dataRoles": [
+    {
+      "name": "Category",
+      "kind": "Grouping",
+      "displayName": "Category"
+    },
+    {
+      "name": "Series",
+      "kind": "Grouping",
+      "displayName": "Series",
+      "requiredTypes": [
+        {
+          "text": true
+        }
+      ]
+    },
+    {
+      "name": "Y",
+      "kind": "Measure",
+      "displayName": "Y Value"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "Category": {
+            "max": 1
+          },
+          "Series": {
+            "max": 1
+          },
+          "Y": {
+            "max": 1
+          }
+        }
+      ],
+      "categorical": {
+        "categories": [
+          {
+            "for": {
+              "in": "Category"
+            }
+          }
+        ],
+        "values": {
+          "group": {
+            "by": "Series",
+            "select": [
+              {
+                "for": {
+                  "in": "Y"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "Category": {
+            "max": 1
+          },
+          "Y": {
+            "max": 1
+          }
+        }
+      ],
+      "categorical": {
+        "categories": [
+          {
+            "for": {
+              "in": "Category"
+            }
+          }
+        ],
+        "values": {
+          "select": [
+            {
+              "for": {
+                "in": "Y"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "animation": {
+      "displayName": "Animation",
+      "properties": {
+        "hoverScale": {
+          "displayName": "Hovered bar scale",
+          "type": {
+            "numeric": true
+          }
+        },
+        "neighborScale": {
+          "displayName": "Neighbor bar scale",
+          "type": {
+            "numeric": true
+          }
+        },
+        "durationMs": {
+          "displayName": "Animation duration (ms)",
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "dataColors": {
+      "displayName": "Data colors",
+      "properties": {
+        "defaultColor": {
+          "displayName": "Default color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "dataLabels": {
+      "displayName": "Data labels",
+      "properties": {
+        "show": {
+          "displayName": "Show",
+          "type": {
+            "bool": true
+          }
+        },
+        "color": {
+          "displayName": "Color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "fontSize": {
+          "displayName": "Font size",
+          "type": {
+            "formatting": {
+              "fontSize": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "visual": {
+    "name": "hoverAmplifyColumn",
+    "displayName": "Hover Amplify Column",
+    "guid": "HoverAmplifyColumn12345",
+    "visualClassName": "Visual",
+    "version": "1.0.0",
+    "description": "Clustered column chart with a hover grow animation and neighbor emphasis.",
+    "supportUrl": "https://example.com/hover-amplify-column-support",
+    "gitHubUrl": "https://example.com/hover-amplify-column"
+  },
+  "apiVersion": "5.3.0",
+  "author": {
+    "name": "M365 Copilot",
+    "email": ""
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "externalJS": [],
+  "resources": [],
+  "stringResources": []
+}
